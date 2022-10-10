@@ -81,6 +81,7 @@ section > article {
   flex: 1 1 0;
   margin: 1rem;
   width: 30%;
+  cursor: pointer;
 }
 article > img {
   height: 190px;
@@ -109,6 +110,11 @@ article div .writerImg {
 }
 .writer span {
   color: rgb(75, 74, 74);
+}
+/*카드 트렌지션*/
+article:hover {
+  transform: translateY(-10px);
+  box-shadow: rgb(0 0 0 / 5%) 1px 5px 16px;
 }
 /*반응형*/
 @media (min-width: 801px) and (max-width: 1024px) {
