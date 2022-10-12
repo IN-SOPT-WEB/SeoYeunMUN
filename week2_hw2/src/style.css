@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+* {
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+}
+body {
+  background-color: #f8f9fa;
+  padding: 0;
+  margin: 0;
+  width: 1024px;
+  margin: 0 auto;
+}
+body > * {
+  width: 100%;
+}
+
+/*header*/
+header > h1 {
+  font-family: "Source Code Pro", monospace;
+  font-size: 25px;
+}
+header .material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+header nav > ul {
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
+header nav ul > li {
+  padding: 0 10px;
+  cursor: pointer;
+  list-style: none;
+  display: inline;
+}
+#write_newText {
+  background-color: rgba(97, 97, 97, 0.868);
+  border-radius: 25px;
+  color: white;
+  padding: 12px;
+  font-weight: 300;
+}
+#write_newText > a {
+  text-decoration: none;
+  color: inherit;
+}
+header nav ul li .writerImg {
+  width: 40px;
+  height: 40px;
+  box-shadow: rgb(0 0 0 / 10%) 2px 3px 4px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 50px;
+}
+header > nav > ul {
+  display: flex;
+  align-items: center;
+}
+header + nav .material-symbols-outlined {
+  word-spacing: -10px;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 33;
+  font-weight: bold;
+  padding: 0 10px;
+  font-size: 18px;
+}
+/*custom select-option*/
+.selection {
+  vertical-align: super;
+  margin-left: 10px;
+  display: inline-block;
+  position: relative;
+  padding: 8px;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 10%) 0px 2px 5px;
+  font-size: 13px;
+}
+.option_ul {
+  width: 100%;
+  position: absolute;
+  right: 0px;
+  padding: 0;
+  padding-top: 10px;
+  box-shadow: inherit;
+  z-index: 1;
+}
+.option {
+  color: black;
+  cursor: pointer;
+  list-style: none;
+  padding: 10px;
+  background-color: white;
+}
+.option:hover {
+  color: rgb(67, 133, 111);
+}
+.toggle_btn {
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+.selected {
+  color: rgb(67, 133, 111);
+}
+/*nav*/
+.navbar span {
+  vertical-align: text-top;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.navbar .active {
+  border-bottom: black solid 2px;
+  padding-bottom: 15px;
+}
+.navbar .deactivated {
+  color: gray;
+}
+.navbar select {
+  border: none;
+  background: white;
+  height: 2rem;
+  width: 6rem;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 4px;
+  cursor: pointer;
+  color: rgb(60, 60, 60);
+}
+
+/*card*/
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+section > article {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  margin: 1rem;
+  width: 30%;
+  cursor: pointer;
+}
+article > img {
+  height: 190px;
+  border-radius: 5px 5px 0 0;
+}
+article > .text {
+  height: 130px;
+  background-color: white;
+  padding: 0 15px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 6px;
+}
+article > .text > .content {
+  color: rgb(141, 139, 139);
+  font-size: 15px;
+}
+.writer {
+  padding: 0 15px 10px 15px;
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+}
+.writerImg {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  vertical-align: bottom;
+}
+.writer span {
+  color: rgb(75, 74, 74);
+}
+/*카드 트렌지션*/
+article:hover {
+  transform: translateY(-10px);
+  box-shadow: rgb(0 0 0 / 15%) 0px -13px 14px;
+}
+/*선택된 옵션 스타일 지정*/
+.selected {
+  color: rgb(47, 93, 93);
+}
+
+/*반응형*/
+@media (min-width: 801px) and (max-width: 1024px) {
+  body {
+    width: 90%;
+  }
+  article > img {
+    height: 30vh;
+  }
+}
+@media (max-width: 800px) {
+  body {
+    width: 100%;
+  }
+  section > article {
+    width: 100%;
+  }
+  article > img {
+    height: 40vh;
+  }
+}
