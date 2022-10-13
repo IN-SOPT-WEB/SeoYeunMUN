@@ -16,7 +16,9 @@ body {
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 20;
 }
-nav > button {
+.set-tdy,
+.set-tmr,
+.set-all {
   font-size: 15px;
 }
 main {
