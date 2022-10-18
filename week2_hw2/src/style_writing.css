@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+}
+body {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin: 0;
+}
+body > form > input {
+  background-color: transparent;
+  border: 0;
+  color: rgb(39, 39, 39);
+}
+body > form > input:focus {
+  background-color: transparent;
+  outline: none;
+}
+ul,
+form {
+  display: inline;
+  padding: 0;
+}
+.tags {
+  display: inline;
+  padding: 13px;
+  background-color: rgb(231, 231, 231);
+  color: rgb(98, 161, 141);
+  border-radius: 26px;
+  margin-left: 3px;
+  font-size: 14px;
+}

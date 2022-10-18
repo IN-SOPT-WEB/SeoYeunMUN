@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
-    <script src="./week2.js"></script>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -17,49 +16,49 @@
       <h1>To do list</h1>
     </header>
     <nav>
-      <button>오늘 할일 보기</button>
-      <button>내일 할일 보기</button>
-      <button>모든 할일 보기</button>
+      <button class="set-tdy">오늘 할일 보기</button>
+      <button class="set-tmr">내일 할일 보기</button>
+      <button class="set-all">모든 할일 보기</button>
     </nav>
     <main>
-      <section>
+      <section class="section-tdy">
         <h3>✅ 오늘 할일</h3>
-        <ul>
-          <li>
-            <span> SOPT 기본 과제하기 </span>
-            <button>
+        <ul class="list-tdy">
+          <li class="list__item">
+            <span class="list__todo-text"> SOPT 기본 과제하기 </span>
+            <button class="list__del-btn">
               <span class="material-symbols-outlined"> delete </span>
             </button>
           </li>
         </ul>
-        <form action="post">
-          <input type="text" id="todo-content" />
-          <button>제출</button>
+        <form action="post" class="form-todo">
+          <input type="text" id="text" />
+          <button class="form-todo__btn">제출</button>
         </form>
       </section>
-      <section>
+      <section class="section-tmr">
         <h3>✅ 내일 할일</h3>
-        <ul>
-          <li>
-            <span> SOPT 심화 과제하기 </span>
-            <button>
+        <ul class="list-tmr">
+          <li class="list__item">
+            <span class="list__todo-text"> SOPT 심화 과제하기</span>
+            <button class="list__del-btn">
               <span class="material-symbols-outlined"> delete </span>
             </button>
           </li>
-          <hr />
-          <li>
-            <span> SOPT 생각 과제하기 </span>
-            <button>
+          <li class="list__item">
+            <span class="list__todo-text"> SOPT 생각 과제하기 </span>
+            <button class="list__del-btn">
               <span class="material-symbols-outlined"> delete </span>
             </button>
           </li>
         </ul>
-        <form action="">
-          <input type="text" name="" id="" />
-          <button>제출</button>
+        <form action="post" class="form-todo">
+          <input type="text" id="text" />
+          <button class="form__btn">제출</button>
         </form>
       </section>
     </main>
     <footer>SOPT Week1 과제 TODOLIST 문서연</footer>
+    <script src="./week2.js"></script>
   </body>
 </html>

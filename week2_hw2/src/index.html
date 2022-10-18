@@ -15,29 +15,57 @@
     <header>
       <h1>velog</h1>
       <nav>
-        <span class="material-symbols-outlined">sunny</span>
-        <span class="material-symbols-outlined">search</span>
-        <span>로그인</span>
+        <ul>
+          <li class="material-symbols-outlined">sunny</li>
+          <li class="material-symbols-outlined">search</li>
+          <li id="write_newText">
+            <a href="./writingSection.html">새 글 작성</a>
+          </li>
+          <li>
+            <img
+              src="https://cdn.pixabay.com/photo/2021/01/29/08/08/dog-5960092_1280.jpg"
+              alt="writerImg"
+              class="writerImg"
+            />
+          </li>
+        </ul>
       </nav>
     </header>
     <nav class="navbar">
-      <span>
-        <span class="material-symbols-outlined active"
-          >trending_up
+      <ul>
+        <li class="material-symbols-outlined active">
+          trending_up
           <span>트렌딩</span>
-        </span>
-        <span class="material-symbols-outlined deactivated"
-          >schedule
+        </li>
+        <li class="material-symbols-outlined deactivated">
+          schedule
           <span>최신</span>
-        </span>
-        <select name="week" id="">
-          <option value="이번 주">이번 주</option>
-        </select>
-      </span>
+        </li>
+        <li class="selection">
+          <span class="selection_text">오늘</span>
+          <span class="material-symbols-outlined toggle_btn">
+            arrow_drop_down
+          </span>
+          <ul class="option_ul hidden">
+            <li class="option selected">
+              <span>오늘</span>
+            </li>
+            <li class="option">
+              <span>이번 주</span>
+            </li>
+            <li class="option">
+              <span>이번 달</span>
+            </li>
+            <li class="option">
+              <span>올해</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
       <span class="material-symbols-outlined">more_vert</span>
     </nav>
     <section>
-      `
       <article>
         <img
           src="https://cdn.pixabay.com/photo/2022/10/02/20/48/dog-7494416_1280.jpg"
@@ -45,7 +73,7 @@
         />
         <div class="text">
           <h3>Very cute dog</h3>
-          <div>매우 귀여운 강아지다.</div>
+          <p class="content">매우 귀여운 강아지다.</p>
         </div>
         <div class="writer">
           <img
@@ -63,7 +91,7 @@
         />
         <div class="text">
           <h3>아름다운 밤</h3>
-          <div>졸리다....</div>
+          <p class="content">졸리다....</p>
         </div>
         <div class="writer">
           <img
@@ -81,7 +109,7 @@
         />
         <div class="text">
           <h3>HTML 코드</h3>
-          <div>엉금엉금</div>
+          <p class="content">엉금엉금</p>
         </div>
         <div class="writer">
           <img
@@ -99,7 +127,7 @@
         />
         <div class="text">
           <h3>열심히 하는 사람</h3>
-          <div>마치 나와 같구나</div>
+          <p class="content">마치 나와 같구나</p>
         </div>
         <div class="writer">
           <img
@@ -117,7 +145,7 @@
         />
         <div class="text">
           <h3>new! 새로 산 맥북</h3>
-          <div>>진짜 너무 소중하다 매일 안경 닦이로 닦는다</div>
+          <p class="content">>진짜 너무 소중하다 매일 안경 닦이로 닦는다</p>
         </div>
         <div class="writer">
           <img
@@ -135,7 +163,7 @@
         />
         <div class="text">
           <h3>흑백 맥북도 역시 멋지다</h3>
-          <div>하지만 이건 맥북 프로고 내 건 맥북 에어다</div>
+          <p class="content">하지만 이건 맥북 프로고 내 건 맥북 에어다</p>
         </div>
         <div class="writer">
           <img
@@ -147,5 +175,6 @@
         </div>
       </article>
     </section>
+    <script src="./week2.js"></script>
   </body>
 </html>
