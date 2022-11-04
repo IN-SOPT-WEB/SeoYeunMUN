@@ -1,42 +1,44 @@
 노션에도 있습니당: https://hypnotic-snipe-3d5.notion.site/b0ce3540ae334b6d8b0cca807b95749c
 
+
 ## 💡 자바스크립트 프레임워크의 공통점
 
----
 
-바닐라 자바스크립트로 웹 프로그램을 제작하면 다른 페이지로 들어갈 때 순간적으로 화면이 깜박이는 blinking issue를 볼 수가 있다. 이는 바닐라 자바스크립트로 제작된 웹 프로그램이
-
-`SSR(서버 사이드 랜더링)` 방식으로 돌아가기 때문이다.
+바닐라 자바스크립트로 웹 프로그램을 제작하면 다른 페이지로 들어갈 때 순간적으로 화면이 깜박이는 blinking issue를 볼 수가 있다. 
+이는 바닐라 자바스크립트로 제작된 웹 프로그램이 `SSR(서버 사이드 랜더링)` 방식으로 돌아가기 때문이다.
 
 - SSR이란?
-  [https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FdGCZHY%2FbtrcOfdcohI%2FDKF2Cr2HHW5X8vNSaexEpK%2Fimg.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FdGCZHY%2FbtrcOfdcohI%2FDKF2Cr2HHW5X8vNSaexEpK%2Fimg.png)
-    <aside>
-    💡 SSR이란, 클라이언트에서 모든 걸 처리하는 게 아니라 서버에서 html 파일을 바로 랜더링 가능한  상태로 만들어주면 서버로부터 `완전하게 만들어진 html파일`을 받아와 페이지 전체를 렌더링 하는 방식을 말한다. 페이지 내에서 상호작용이 생기면(링크를 통해 다른 페이지로 들어가는 등) 서버에서 이 완전한 페이지를 다시 받아와야 하기 때문에 첫 렌더링은 빨라도 이후에 blinking issue가 생긴다.
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FdGCZHY%2FbtrcOfdcohI%2FDKF2Cr2HHW5X8vNSaexEpK%2Fimg.png">
+</img>
+
+    💡 SSR이란, 클라이언트에서 모든 걸 처리하는 게 아니라 서버에서 html 파일을 바로 랜더링 가능한  상태로 만들어주면 서버로부터 
+    `완전하게 만들어진 html파일`을 받아와 페이지 전체를 렌더링 하는 방식을 말한다. 페이지 내에서 상호작용이 생기면(링크를 통해 다른 페이지로 들어가는 등) 
+    서버에서 이 완전한 페이지를 다시 받아와야 하기 때문에 첫 렌더링은 빨라도 이후에 blinking issue가 생긴다.
     
-    </aside>
+
 
 react, vue.js, angular, svelt 와 같은 라이브러리 및 프레임워크들은 `CSR(클라이언트 사이드 랜더링)` 의 랜더링 방식을 지원하고, 컴포넌트 구성으로 SPA를 지원하고 있다.
 
 - CSR과 SPA란?
-  [https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbkJ0my%2FbtrcOM9GT1V%2FaKDCRhm77MfHF8ushplGi0%2Fimg.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbkJ0my%2FbtrcOM9GT1V%2FaKDCRhm77MfHF8ushplGi0%2Fimg.png)
-    <aside>
-    💡 CSR이란, SSR방식과는 달리 클라이언트가 맨 처음 url 요청에 웹 문서가 가지고 있는 모든 정보, 링크페이지까지도 한번에 다 받아와 초기 화면이 느리게 나타날 수 있으나, 이후에 상호작용에서는 더 높은 사용성을 가질 수 있다.
-    
-    </aside>
-    
-    <aside>
-    💡 SPA(Single Page Application)란,  말 그대로 하나의 페이지로 구성된 웹 어플리케이션으로 첫 랜더링에는 하나의 html 파일만 표시된다. 이후에 새로운 페이지 요청이 있을 때, 페이지 갱신에 필요한 데이터만 전달 받는다.
-    
-    </aside>
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbkJ0my%2FbtrcOM9GT1V%2FaKDCRhm77MfHF8ushplGi0%2Fimg.png">
+</img>
 
-> 같은 **랜더링 방식 및 아키텍쳐를 지원한다면 이들에는 어떤 차이가 있는 걸까?**
+    💡 CSR이란, SSR방식과는 달리 클라이언트가 맨 처음 url 요청에 웹 문서가 가지고 있는 모든 정보, 링크페이지까지도 한번에 다 받아와 초기 화면이 느리게 나타날 수 있으나, 
+    이후에 상호작용에서는 더 높은 사용성을 가질 수 있다.
+  
+    💡 SPA(Single Page Application)란,  말 그대로 하나의 페이지로 구성된 웹 어플리케이션으로 첫 랜더링에는 하나의 html 파일만 표시된다. 
+    이후에 새로운 페이지 요청이 있을 때, 페이지 갱신에 필요한 데이터만 전달 받는다.
+    
+
+
+> 같은 랜더링 방식 및 아키텍쳐를 지원한다면 이들에는 어떤 차이가 있는 걸까? 
 
 ## ❓ 프레임워크 간의 차이점
 
 ---
 
 <aside>
-💡 **React**
+💡 React 
 
 - **프레임 워크가 아닌 라이브러리이다.**
   리액트는 라이브러리로, 리액트 자체에서는 빌드나 라우팅 등의 기능을 지원하지 않아 redux와 같은 외부 라이브러리를 import 해와야한다. 그러나 라이브러리이기 때문에 자유도가 높고, 많은 기능이 필요하지 않은 소규모 프로젝트 등에 사용하기 좋다.
@@ -46,9 +48,9 @@ react, vue.js, angular, svelt 와 같은 라이브러리 및 프레임워크들�
 </aside>
 
 <aside>
-💡 **Vue.js**
+💡 Vue.js 
 
-- \***\*`Virtual DOM`을 사용한다.**
+- `Virtual DOM`을 사용한다.
   React와 마찬가지로 가상 DOM을 사용.
 - **체계화된 Vue** **문법이 존재**
   자유도가 낮고 체계화된 문법이 존재하지만, 그만큼 쉽게 코드를 짤 수 있다.
@@ -56,7 +58,7 @@ react, vue.js, angular, svelt 와 같은 라이브러리 및 프레임워크들�
 </aside>
 
 <aside>
-💡 **Angular**
+💡 Angular 
 
 - **많은 기능 보유**
   라우팅, 폼 관리, 클라이언트-서버 통신 등 웹 개발에 필요한 라이브러리를 조화롭게 통합한 모음집으로, 무거울 정도로 많은 기능을 보유하고 있다.
@@ -66,9 +68,9 @@ react, vue.js, angular, svelt 와 같은 라이브러리 및 프레임워크들�
 </aside>
 
 <aside>
-💡 **Svelte**
+💡 Svelte
 
-- ************\*\*\*\*************\*\*\*\*************\*\*\*\*************프론트엔드 컴파일러이다.************\*\*\*\*************\*\*\*\*************\*\*\*\*************
+- 프론트엔드 컴파일러이다.
   스벨트는 빌드 타임에 한꺼번에 코드를 해석하기도 하고, 또 필요한 작은 양의 코드만 남겨서 로드하여 속도가 빠르다.
 - **`Virtual DOM`을 사용하지 않는다.**
   반응형 선언문과 변수를 이용해 로직을 계산하여 연관된 변수등을 한번에 변경해주고,
@@ -78,7 +80,10 @@ react, vue.js, angular, svelt 와 같은 라이브러리 및 프레임워크들�
 
 </aside>
 
-- 컴파일러와 인터프리터의 차이가 헷갈린다면!
+
+<br>
+
+> 컴파일러와 인터프리터의 차이가 헷갈린다면!
   ***
   - `컴파일 언어:` 소스 코드 전체를 컴파일 한 후 (기계어로 번역한 후) 기계어를 CPU/메모리를 통해 읽어 실행하는 방식으로 동작하는 언어
   - `인터프리터 언어:` 소스 코드를 한 줄씩 번역하면서 실행하는 방식으로 동작하는 언어
@@ -87,6 +92,7 @@ react, vue.js, angular, svelt 와 같은 라이브러리 및 프레임워크들�
     | 인터프리터 언어 | - 빌드 과정 없이 실행 가능: 별도의 실행 파일이 없다. |
     | - 지원하는 인터프리터만 있다면 실행 가능하기 때문에 플랫폼에 독립적이다. | - 상대적으로 느린 속도: 컴파일을 하지 않고 인터프리터가 직접 한 줄씩 읽어서 실시간으로 실행 |
     | 컴파일 언어 | - 빠른 속도: 이미 컴파일된 파일은 컴퓨터가 별다른 작업 없이 해당 프로그램 이해 가능. | - 플랫폼 의존성: 실행 기계가 달라지면 새로 컴파일 해야함. |
+<br>
 
 ## ❓ 스타트업 창업 시 무슨 프레임워크가 좋을까?
 
