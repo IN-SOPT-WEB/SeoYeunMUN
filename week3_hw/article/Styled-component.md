@@ -2,7 +2,6 @@
 
 ## ❓ Styled- Component의 장/단점?
 
----
 
 ### 장점
 
@@ -19,18 +18,12 @@
 
 ## ❓ Styled- Component 대체 라이브러리
 
----
 
 <aside>
-👩‍🎤 **Emotion**
+  
+### **Emotion 👩‍🎤**
 
-React에서만 사용되는 것이 아니라 프레임워크를 사용하지 않을 때도 사용가능한
-
-**CSS-in-JS 라이브러리.** styled- component와 비슷하나,원래 태그를 살리는 게 특징이고
-
-`Nested`와 같은 scss 문법도 사용할 수 있게 해준다.
-
-@emotion/styled 를 설치하면 styled- component처럼 사용 가능.
+React에서만 사용되는 것이 아니라 프레임워크를 사용하지 않을 때도 사용가능한 **CSS-in-JS 라이브러리.** styled- component와 비슷하나,원래 태그를 살리는 게 특징이고`Nested`와 같은 scss 문법도 사용할 수 있게 해준다. @emotion/styled 를 설치하면 styled- component처럼 사용 가능.
 
 </aside>
 
@@ -50,10 +43,10 @@ const divStyle = css`
 `export default function App() {
   return <div css={divStyle}>Hover to change color.</div>}
 ```
+<br>
 
 ## ‼️ 내가 가장 맘에 드는 스타일링 라이브러리
 
----
 
 사실 이전에는 `styled-component`를 사용할 때 css만큼 익숙하지 않았기에,
 
