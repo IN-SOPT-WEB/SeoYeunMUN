@@ -54,7 +54,7 @@ const StyledUl = styled.ul`
   cursor: pointer;
   font-size: 20px;
 `;
-function Content({ score, Isover, setScore, setIsover }) {
+function Content({ score, setScore }) {
   const [Isright, setIsright] = useState(false);
   return (
     <main>
@@ -114,7 +114,7 @@ function Redo({ setScore }) {
   );
 }
 
-function SelectItems({ score, setIsright, setScore }) {
+function SelectItems({ score, setIsright }) {
   let [names, setNames] = useState([...setRandomNames(imgs[score].name)]);
   useEffect(() => {
     setNames([...setRandomNames(imgs[score].name)]);
@@ -124,6 +124,7 @@ function SelectItems({ score, setIsright, setScore }) {
       {names.map((item, i) => {
         return (
           <li
+            key={item}
             onClick={() => {
               if (item === imgs[score].name) {
                 setIsright("right");
