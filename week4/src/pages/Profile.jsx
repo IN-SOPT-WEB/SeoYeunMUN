@@ -1,7 +1,41 @@
-import { Link } from "react-router-dom";
-//GET 통신으로 받아오기 api import 해도 되고 뭐 상관 무
-//Search에 state값 전해주기(api에서 받아온거 같이 전해줘도 상관 무고.. 근데 가능할지는 미지수)
-function Profile() {
-  return <Link to="/search/{}"></Link>;
-}
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import getGithubProfile from "../lib/api";
+import { styled } from "styled-components";
+
+const Profile = () => {
+  const { userId } = useParams();
+  const [userdata, setUserdata] = useState({
+    html_url: "",
+    following: 0,
+    followers: 0,
+  });
+  //params 받아오고 UseEffect 시작
+  useEffect(() => {
+    const getUserData = async () => {
+      const newUserdata = await getGithubProfile(userId);
+      setUserdata(newUserdata);
+    };
+    getUserData();
+  }, [userId]);
+  return (
+    <>
+      <figure>
+        <img src={userdata.avatar_url} alt="githubProfile" />
+        <button>
+          <a href={userdata.html_url}>Visit {userId}</a>
+        </button>
+      </figure>
+      <article>
+        <h3>following</h3>
+        {userdata.following}
+      </article>
+      <article>
+        <h3>followers</h3>
+        {userdata.followers}
+      </article>
+    </>
+  );
+};
+
 export default Profile;
