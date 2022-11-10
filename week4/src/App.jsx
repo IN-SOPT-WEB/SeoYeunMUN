@@ -1,9 +1,7 @@
 import Router from "./lib/router";
-import { useState } from "react";
 function App() {
-  let [userIds, setUserIds] = useState([]);
   return (
-    <Router userIds={userIds} setUserIds={setUserIds}>
+    <Router>
       <div className="App"></div>
     </Router>
   );
