@@ -1,9 +1,11 @@
 import Router from "./lib/router";
+import GlobalStyle from "./styles/GlobalStyle";
 function App() {
   return (
-    <Router>
-      <div className="App"></div>
-    </Router>
+    <>
+      <GlobalStyle></GlobalStyle>
+      <Router></Router>
+    </>
   );
 }
 

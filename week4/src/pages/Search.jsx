@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import styled from "styled-components";
 const Search = () => {
   const navigate = useNavigate();
   let [userIds, setUserIds] = useState([]);
@@ -8,41 +8,53 @@ const Search = () => {
   const handleSubmit = (userId) => {
     navigate(`/search/${userId}`);
     setIsShowing(false);
-    if (userIds.includes(userId)) return;
-    setUserIds([...userIds, userId]);
+    if (!userIds.includes(userId)) {
+      setUserIds([...userIds, userId]);
+      console.log("did", userIds);
+    }
+  };
+  //history를 눌렀을 때 blur가 되어서 사라지는 문제 해결
+  const handleBlur = (event) => {
+    console.log(event);
+    if (!event.target.parentElement.contains(event.target)) {
+      setIsShowing(false);
+    }
   };
   return (
-    <>
-      <form
-        method="get"
-        onSubmit={(e) => {
-          e.preventDefault();
-          let userId = e.target[0].value;
-          handleSubmit(userId);
-          e.target[0].value = "";
-          e.target[0].blur();
-        }}
-      >
+    <SearchArea>
+      <Header>Search Github profile</Header>
+      <form method="post" tabIndex={0}>
         <input
           type="text"
           name="github"
+          autoComplete="off"
           onFocus={(e) => {
-            setIsShowing(true);
+            if (userIds.length !== 0) setIsShowing(true);
           }}
-          onBlur={() => {
-            setIsShowing(false);
+          onBlur={(e) => {
+            handleBlur(e);
+          }}
+          onKeyPress={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              let userId = e.target.value;
+              handleSubmit(userId);
+              e.target.value = "";
+              e.target.blur();
+            }
           }}
         />
+        {isShowing && (
+          <History
+            tabIndex={1}
+            userIds={userIds}
+            setUserIds={setUserIds}
+            setIsShowing={setIsShowing}
+            navigate={navigate}
+          />
+        )}
       </form>
-      {isShowing && (
-        <History
-          userIds={userIds}
-          setUserIds={setUserIds}
-          setIsShowing={setIsShowing}
-          navigate={navigate}
-        />
-      )}
-    </>
+    </SearchArea>
   );
 };
 
@@ -68,14 +80,15 @@ const History = (props) => {
       {userIds.map((userId) => {
         return (
           <li
+            key={userId}
             onClick={(e) => {
               handleNavigate(userId);
             }}
           >
             <span>{userId}</span>
             <button
-              onClick={() => {
-                handleDelete(userId);
+              onClick={(e) => {
+                e.target === e.currentTarget && handleDelete(userId);
               }}
             >
               X
@@ -87,3 +100,15 @@ const History = (props) => {
   );
 };
 export default Search;
+
+const SearchArea = styled.div`
+  background-color: #ffe7afb8;
+  border-radius: 10px;
+  width: 30rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+`;
+const Header = styled.header`
+  font-weight: bold;
+  padding: 1rem;
+`;
